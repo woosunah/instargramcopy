@@ -1,41 +1,25 @@
 <template>
-  <v-app-bar color="white">
-    <img class="logo" src="../../assets/img/logo.png" alt="logo">
-    <v-text-field class="search"
-            placeholder="검색"
-            prepend-inner-icon="mdi-magnify"
-            filled
-            dense
-            style="top:14px"
-          >
-          </v-text-field>
-          <v-btn icon><v-icon>mdi-home</v-icon></v-btn>
-          <v-btn icon><v-icon>mdi-send-outline</v-icon></v-btn>
-          <v-btn icon><v-icon>mdi-compass-outline</v-icon></v-btn>
-          <v-btn icon><v-icon>mdi-heart-outline</v-icon></v-btn>
-          <v-avatar size="30">
-            <v-img src="https://6.vikiplatform.com/image/a11230e2d98d4a73825a4c10c8c6feb0.jpg?x=b&a=0x0&s=590x330&q=h&e=t&f=t&cb=1"></v-img>
-          </v-avatar>
+  <v-app-bar color="white" elevation="1">
+    <!-- elevation 로고가 있는 헤더부분 그림자 나타내기 -->
+    <router-link to="/"
+      ><v-btn icon><v-icon>mdi-camera</v-icon></v-btn></router-link
+    >
+    <v-spacer></v-spacer>
+    <v-img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png"
+      alt="logo"
+      max-width="120"
+    />
+    <v-spacer></v-spacer>
+    <router-link to=""
+      ><v-btn icon><v-icon>mdi-send</v-icon></v-btn></router-link
+    >
   </v-app-bar>
+  <!-- // 싱글페이지 어플리케이션 -> spa -->
 </template>
 
 <script>
-  export default {
-    name:"AppBar",
-    data() {
-      return {
-      }
-    },
-  }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-.logo {
-  height:30px;
-  margin-left:10px;
-}
-
-.search{
-  margin:0 20px 0 20px;
-}
-</style>
+<style lang="scss" scoped></style>
