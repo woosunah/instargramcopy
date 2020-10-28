@@ -10,28 +10,29 @@
       </template>
 
       <v-card>
-        <v-card-title class="headline grey lighten-2">
-          Privacy Policy
-        </v-card-title>
-
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
+        <v-row class="card-title" justify="center" align="center">
+          <v-btn icon @click="dialog = false"><v-icon>mdi-close</v-icon></v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
-            I accept
-          </v-btn>
-        </v-card-actions>
+          <h3>좋아요</h3>
+          <v-spacer></v-spacer>
+          <v-btn icon style="opacity:0;" disabled
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-row>
+        <div class="like-user-list">
+          <v-row
+            v-for="(user, i) in like"
+            :key="i"
+            class="list-item"
+            no-gutters
+            align="center"
+          >
+            <!-- no-gutter -> margin:0, padding:0; -->
+            <p>{{ user }}</p>
+            <v-spacer></v-spacer>
+            <v-btn color="blue" dark>팔로우</v-btn>
+          </v-row>
+        </div>
       </v-card>
     </v-dialog>
   </div>
@@ -41,11 +42,38 @@
 export default {
   name: 'Like',
   props: ['like'],
+  data() {
+    return {
+      dialog: false,
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .like-container {
   padding: 0 16px;
+}
+.card-title {
+  height: 60px;
+  padding: 0 20px;
+  border: 1px solid #80808054;
+
+  h3 {
+    display: inline-block;
+  }
+}
+.list-item {
+  height: 70px;
+  padding: 10px 20px;
+  width: 100%;
+  // 하단 스크롤바 생김 방지 width:100%
+
+  p {
+    display: inline-block;
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 </style>

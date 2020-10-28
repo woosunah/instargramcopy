@@ -20,16 +20,28 @@
     </div>
     <post-item></post-item>
     <like :like="post.like"></like>
+    <post-text
+      :userName="post.userProfile.name"
+      :text="post.content.text"
+    ></post-text>
+    <comment
+      :comments="post.comments"
+      :user-img="post.userProfile.img"
+      :index="index"
+    >
+    </comment>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Post',
-  props: ['post'],
+  props: ['post', 'index'],
   components: {
     PostItem: () => import('@/components/main/PostItem.vue'),
     Like: () => import('@/components/main/Like.vue'),
+    PostText: () => import('@/components/main/PostText.vue'),
+    Comment: () => import('@/components/main/Comment.vue'),
   },
 };
 </script>

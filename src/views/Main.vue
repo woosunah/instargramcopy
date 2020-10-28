@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <story-slider></story-slider>
     <post v-for="(post, i) in posts" :key="i" :post="post"></post>
     <post-item></post-item>
@@ -20,4 +20,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  padding-bottom: 80px;
+}
+</style>

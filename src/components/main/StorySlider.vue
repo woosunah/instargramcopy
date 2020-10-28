@@ -47,7 +47,7 @@ div::-webkit-scrollbar {
 }
 
 .wrapper {
-  width: 1000px;
+  // width: 1000px;
   white-space: nowrap;
   padding: 10px;
 }
